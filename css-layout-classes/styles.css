@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.column-full {
+  flex-basis: 100%;
+}
+
 .row {
   display: flex;
 }
@@ -17,6 +21,10 @@
 
 .column-two-third {
   flex-basis: calc(100% / 1.5);
+}
+
+.column-one-fourth {
+  flex-basis: 25%;
 }
 
 img {
