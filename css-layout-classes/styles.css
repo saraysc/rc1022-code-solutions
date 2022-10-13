@@ -5,8 +5,6 @@
 
 .row {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
 .col-2 {
@@ -18,11 +16,7 @@
 }
 
 .column-two-third {
-  flex-basis: calc(200% / 3);
-}
-
-.column-one-fourth {
-  display: flex;
+  flex-basis: calc(100% / 1.5);
 }
 
 img {
