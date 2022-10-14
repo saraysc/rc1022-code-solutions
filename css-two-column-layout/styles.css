@@ -13,12 +13,13 @@ body {
 }
 
 .column-full {
-  max-width: 70%;
+  width: 100%;
   margin: auto;
 }
 
 .column-two {
   display: flex;
+  width: 50%;
   justify-content: center;
 }
 
@@ -54,4 +55,5 @@ p {
   color: #b16565;
   font-weight: bold;
   margin-top: 14px;
+  margin-left: 350px;
 }
