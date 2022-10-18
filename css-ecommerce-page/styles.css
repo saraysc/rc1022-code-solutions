@@ -1,0 +1,49 @@
+body {
+  width: 900px;
+  margin: auto;
+  font-family: "DM Sans", sans-serif;
+}
+
+.column-full {
+  text-align: center;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+img {
+  width: 130px;
+  height: 190px;
+}
+
+.column-fifth {
+  margin: auto;
+}
+
+.text-column-fifth {
+  flex-basis: 20%;
+  padding-left: 25px;
+  height: 30px;
+}
+
+.light-gray {
+  color: #9b9b9b;
+}
+
+p {
+  font-size: 12px;
+}
+
+.lined-text {
+  text-decoration: line-through;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.coral-back {
+  background-color: #f08080;
+}
