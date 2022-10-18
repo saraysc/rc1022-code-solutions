@@ -1,0 +1,42 @@
+* {
+  background-color: #e9e5e5;
+}
+
+body {
+  font-family: Barlow, sans-serif;
+}
+
+.container {
+  max-width: 900px;
+}
+
+.column-full {
+  width: 100%;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
+
+.column-fourth {
+  flex-basis: 25%;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.column-icon-fourth {
+  flex-basis: 8%;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.p-text {
+  text-align: center;
+  font-size: 12px;
+}
