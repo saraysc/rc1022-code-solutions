@@ -14,7 +14,7 @@ $hotButton.addEventListener('click', function (event) {
   } else if (numberClicks >= 7 && numberClicks < 10) {
     classValue.className = 'hot-button tepid';
   } else if (numberClicks >= 10 && numberClicks < 13) {
-    classValue.className = 'hot-button tepid';
+    classValue.className = 'hot-button warm';
   } else if (numberClicks >= 13 && numberClicks < 16) {
     classValue.className = 'hot-button hot';
   } else if (numberClicks >= 16) {
