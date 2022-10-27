@@ -1,0 +1,32 @@
+.row {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle.yellow {
+  background-color: #ffff5e;
+  box-shadow: 0 0 3px 3px #ffff5e;
+}
+
+.circle.black {
+  background-color: #2a2a28;
+  opacity: 0.8;
+}
+
+.light-yellow {
+  background-color: #ebdeb9;
+}
+
+.dark-black {
+  background-color: black;
+}
