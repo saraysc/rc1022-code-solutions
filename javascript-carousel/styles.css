@@ -1,0 +1,45 @@
+.container {
+  width: 550px;
+  height: 300px;
+  border: 3px solid black;
+  position: relative;
+}
+
+img {
+  width: 250px;
+}
+
+.row1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row2 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 20px;
+}
+
+.margin {
+  margin-right: 4px;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.controls {
+  position: absolute;
+  top: 120px;
+}
+
+.right-arrow {
+  position: absolute;
+  left: 522px;
+}
