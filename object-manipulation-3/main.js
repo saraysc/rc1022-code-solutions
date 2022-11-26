@@ -15,6 +15,11 @@ var players = [
     name: 'Player3',
     hand: null,
     points: 0
+  },
+  {
+    name: 'Player4',
+    hand: null,
+    points: 0
   }
 ];
 
@@ -59,6 +64,7 @@ console.log('Deck after deal cards to players:', dealCards(shuffleCards(cardDeck
 console.log('Player 1 hand: ', players[0].hand);
 console.log('Player 2 hand: ', players[1].hand);
 console.log('Player 3 hand: ', players[2].hand);
+console.log('Player 4 hand: ', players[3].hand);
 
 function calculateScore() {
   for (var i = 0; i < players.length; i++) {
@@ -78,6 +84,7 @@ calculateScore();
 console.log('Points of player 1:', players[0].points);
 console.log('Points of player 2:', players[1].points);
 console.log('Points of player 3:', players[2].points);
+console.log('Points of player 4:', players[3].points);
 
 function findWinner() {
   var winnerPlayer = players[0].name;
