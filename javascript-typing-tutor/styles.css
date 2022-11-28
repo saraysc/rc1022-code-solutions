@@ -1,0 +1,36 @@
+.row {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.font {
+  font-family: cursive;
+  white-space: pre;
+}
+
+.color {
+  color: black;
+}
+
+.border {
+  border-bottom: 1px solid;
+  margin-bottom: 0.3px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.no-underline {
+  text-decoration: none;
+}
