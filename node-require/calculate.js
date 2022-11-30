@@ -15,4 +15,6 @@ if (operator === 'plus') {
   console.log(multiply(num1, num2));
 } else if (operator === 'over') {
   console.log(divide(num1, num2));
+} else {
+  console.log('Invalid operation!');
 }
