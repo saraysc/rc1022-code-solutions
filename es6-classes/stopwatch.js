@@ -1,7 +1,7 @@
 /* exported Stopwatch */
 
 class Stopwatch{
-  constructor(elapsedSeconds){
+  constructor(startTimeInSeconds){
     this.elapsedSeconds = startTimeInSeconds;
   }
   tick() {
