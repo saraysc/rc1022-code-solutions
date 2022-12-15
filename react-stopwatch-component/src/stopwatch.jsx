@@ -24,7 +24,7 @@ export default class Stopwatch extends React.Component {
 
   resetCounting() {
     if (!this.state.isCounting) {
-      this.setState({ count: 0, isCounting: true });
+      this.setState({ count: 0 });
     }
   }
 
