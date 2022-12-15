@@ -1,0 +1,25 @@
+.container {
+  width: 40px;
+  height: 18px;
+  border-radius: 25%;
+  border: 1px solid black;
+  display: flex;
+}
+
+.circle {
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 15px;
+  height: 16px;
+}
+
+.green {
+  background-color: green;
+  justify-content: flex-end;
+}
+
+.gray {
+  background-color: lightgrey;
+  justify-content: flex-start;
+}
