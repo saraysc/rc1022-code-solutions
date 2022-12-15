@@ -1,0 +1,43 @@
+.purple {
+  background-color: #5e096f;
+  color: white;
+}
+
+.light-purple {
+  background-color: #b85acb;
+  color: white;
+}
+
+.coral {
+  background-color: rgb(196 80 67);
+  color: white;
+}
+
+.orange {
+  background-color: lightsalmon;
+  color: black;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.white-background {
+  background-color: white;
+  color: black;
+}
+
+button {
+  padding: 10px;
+  border: 1px solid black;
+  width: 100px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.font {
+  font-size: 12px;
+}
