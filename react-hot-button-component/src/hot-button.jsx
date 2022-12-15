@@ -1,21 +1,5 @@
 import React from 'react';
 
-function buttonColour(numberClicks) {
-  if (numberClicks >= 3 && numberClicks < 6) {
-    return 'purple';
-  } else if (numberClicks >= 6 && numberClicks < 9) {
-    return 'light-purple';
-  } else if (numberClicks >= 9 && numberClicks < 12) {
-    return 'coral';
-  } else if (numberClicks >= 12 && numberClicks < 15) {
-    return 'orange';
-  } else if (numberClicks >= 15 && numberClicks < 18) {
-    return 'yellow';
-  } else if (numberClicks >= 18) {
-    return 'white-background';
-  }
-}
-
 export default class HotButton extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +14,21 @@ export default class HotButton extends React.Component {
   render() {
     const isClicked = this.state.clicks;
     const element = <h1>{isClicked}</h1>;
-    const classes = buttonColour(isClicked);
-    return (<div><button className={classes} onClick={this.handleClick}>Hot Button</button><h2 className='font'>{element}</h2></div>);
+    let color;
+    if (this.state.clicks >= 3 && this.state.clicks < 6) {
+      color = 'purple';
+    } else if (this.state.clicks >= 6 && this.state.clicks < 9) {
+      color = 'light-purple';
+    } else if (this.state.clicks >= 9 && this.state.clicks < 12) {
+      color = 'coral';
+    } else if (this.state.clicks >= 12 && this.state.clicks < 15) {
+      color = 'orange';
+    } else if (this.state.clicks >= 15 && this.state.clicks < 18) {
+      color = 'yellow';
+    } else if (this.state.clicks >= 18) {
+      color = 'white-background';
+    }
+
+    return (<div><button className={color} onClick={this.handleClick}>Hot Button</button><h2 className='font'>{element}</h2></div>);
   }
 }
