@@ -7,7 +7,7 @@ export default class Stopwatch extends React.Component {
     this.clearCounter = this.clearCounter.bind(this);
     this.startCounting = this.startCounting.bind(this);
     this.resetCounting = this.resetCounting.bind(this);
-
+    this.interval = 0;
   }
 
   startCounting() {
