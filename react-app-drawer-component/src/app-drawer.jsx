@@ -10,15 +10,10 @@ export default class AppDrawer extends React.Component {
 
   handleClick(event) {
     this.setState({ listShowing: true });
-    // if (event.target.tagName === 'I') {
-    //   this.setState({ listShowing: true });
-    // } else if (event.target.tagName === 'A' || event.target.className === 'menu gray') {
-    //   this.setState({ listShowing: false });
-    // }
   }
 
   closeMenu(event) {
-    if (this.state.listShowing === true || event.target.className === 'container gray') {
+    if (this.state.listShowing === true || event.target.tagName === 'IMG') {
       this.setState({ listShowing: false });
     }
   }
