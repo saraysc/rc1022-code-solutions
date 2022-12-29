@@ -1,0 +1,41 @@
+1. User can sign up
+-when user enters 'username' and 'password', the method handleChange() is called
+and that information is saved into the state of the class AuthForm
+-when the form is submitted, the handleSubmit() method is called and then a fetch
+request is made to server /api/auth/sign-up
+-the username and password is sent as req.body
+  -if username or password is missing, ClientError will be called and throw error 400
+  -if there is username and password, argon2 returns a promise of the hashed password,
+   -password and username are saved into 'users' table and 201 status is sent to client
+    -if there is an error during the promise, argon2 will return error 500
+
+2. User can sign in.
+-when user enters 'username' and 'password', the method handleChange() is called
+and that information is saved into the state of the class AuthForm
+-when the form is submitted, the handleSubmit() method is called and then a fetch
+request is made to server /api/auth/sign-in
+-the username and password is sent as req.body.
+  -if username or password is missing, ClientError will be called and throw error 401
+-check if the username and password is in the 'users' table
+  -if they dont exist, then it will throw 401 error
+  -if they exist, argon2 returns a promise to check if the password matches the hashed version
+  that is in the database
+    -if does not match, error 401 is thrown
+    -if it matches, username and password will be saved into the object payload
+      -jwt.sign() is called and a new token is created and sent to the client
+      -if sign-in is completed, handleSignIn() is called and saves the token into the window.localStorage
+      -user is updated in the state and the AuthForm is re-rendered
+
+3. User can stay signed in (even if they refresh the page).
+-the page is refreshed and componentDidMount() is called
+-event listener is called on window object in case there is a hash change
+  -if there is change, state will be updated
+-Check if the token is in the local storage with the getItem method
+  -jwtDecode() is called with the token as the argument, and token is decoded
+  -change the state of isAuthorizing to false and page is not re-rendered
+
+4. User can sign out.
+-When clicking the sign out button, handleSignOut() is called
+-token is removed from localStorage
+-user is set to null and page is reloaded
+-user is sent back to sign-in page since there is no more token
