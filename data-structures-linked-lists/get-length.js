@@ -2,10 +2,9 @@
 
 function getLength(list) {
   let result = 1;
-  let otherList = list;
-  while (otherList.next !== null) {
+  while (list.next !== null) {
     result++;
-    otherList = otherList.next;
+    list = list.next;
   }
   return result;
 }

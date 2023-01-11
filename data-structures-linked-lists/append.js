@@ -3,8 +3,7 @@
 
 function append(list, value) {
 
-  const newList = new LinkedList(list);
-  const valor = new LinkedList(value);
-  newList.next = valor;
-
+  while (list.next !== null) {
+    list = list.next;
+  } list.next = new LinkedList(value);
 }
