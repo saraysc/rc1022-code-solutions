@@ -31,7 +31,7 @@ app.post('/api/grades', (req, res, next) => {
   const { name, course, score } = req.body;
   if (!name || !course || !score) {
     res.status(400).json('Input missing');
-  } else if (score >= 0 && score <= 100) {
+  } else if (!Number.isInteger(score) || score >= 0 || score <= 100) {
     res.status(400).json('Score should be an integer from 0 to 100');
   }
   const sql = `
@@ -55,12 +55,14 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
   const gradeId = req.params.gradeId;
   if (!name || !course || !score || !gradeId) {
     res.status(400).json('Invalid input');
+  } else if (!Number.isInteger(score) || score >= 0 || score <= 100) {
+    res.status(400).json('Score should be an integer from 0 to 100');
   }
   const sql = `
   update "grades"
-  set "name"=$1,
-      "course"=$2,
-      "score"=$3
+  set "name" = $1,
+      "course" = $2,
+      "score" = $3
   where "gradeId" = $4
   returning *
   `;
@@ -71,7 +73,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
       if (!grade) {
         res.status(404).json('Grade does not exist in database');
       } else {
-        res.status(200).json(result.rows);
+        res.status(200).json(grade);
       }
 
     })
@@ -82,8 +84,8 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
 });
 
 app.delete('/api/grades/:gradeId', (req, res, next) => {
-  const gradeId = req.params.gradeId;
-  if (isNaN(gradeId) || gradeId <= 0) {
+  const gradeId = Number(req.params.gradeId);
+  if (!Number.isInteger(gradeId) || gradeId < 0 || gradeId > 100) {
     res.status(400).json('Invalid gradeId');
   }
   const sql = `
