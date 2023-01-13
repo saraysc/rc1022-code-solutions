@@ -7,5 +7,5 @@ function graduate(credential) {
 const medicalSchool = graduate('M.D.');
 const lawSchool = graduate('Esq.');
 
-console.log(medicalSchool('Sara Choi'));
-console.log(lawSchool('Sara Choi'));
+console.log(medicalSchool('Sara Y S Choi'));
+console.log(lawSchool('Sar Y S Choi'));
