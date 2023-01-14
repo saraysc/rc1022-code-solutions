@@ -28,10 +28,12 @@ app.get('/api/grades', (req, res, next) => {
 });
 
 app.post('/api/grades', (req, res, next) => {
-  const { name, course, score } = req.body;
+  const name = req.body.name;
+  const course = req.body.course;
+  const score = Number(req.body.score);
   if (!name || !course || !score) {
     res.status(400).json('Input missing');
-  } else if (!Number.isInteger(score) || score >= 0 || score <= 100) {
+  } else if (!Number.isInteger(score) || score < 0 || score > 100) {
     res.status(400).json('Score should be an integer from 0 to 100');
   }
   const sql = `
@@ -51,11 +53,13 @@ app.post('/api/grades', (req, res, next) => {
 });
 
 app.put('/api/grades/:gradeId', (req, res, next) => {
-  const { name, course, score } = req.body;
+  const name = req.body.name;
+  const course = req.body.course;
+  const score = Number(req.body.score);
   const gradeId = req.params.gradeId;
   if (!name || !course || !score || !gradeId) {
     res.status(400).json('Invalid input');
-  } else if (!Number.isInteger(score) || score >= 0 || score <= 100) {
+  } else if (!Number.isInteger(score) || score < 0 || score > 100) {
     res.status(400).json('Score should be an integer from 0 to 100');
   }
   const sql = `
@@ -85,7 +89,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
 
 app.delete('/api/grades/:gradeId', (req, res, next) => {
   const gradeId = Number(req.params.gradeId);
-  if (!Number.isInteger(gradeId) || gradeId < 0 || gradeId > 100) {
+  if (isNaN(gradeId) || gradeId < 0) {
     res.status(400).json('Invalid gradeId');
   }
   const sql = `
